@@ -1,5 +1,2 @@
-Demo for React 
+Demo for React using create-react-app (version 1.5.2)
 
-Setup
-
-- npm install -g create-react-app@1.5.2 
