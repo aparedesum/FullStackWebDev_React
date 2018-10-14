@@ -18,23 +18,6 @@ class Menu extends Component {
         });
     }
 
-    renderDish(dish) {
-        if (dish === null) {
-            return (<div></div>);
-        }
-
-        return (
-            <Card>
-                <CardImg top src={dish.image} alt={dish.name}>
-                </CardImg>
-                <CardBody>
-                    <CardTitle>{dish.name}</CardTitle>
-                    <CardText>{dish.description}</CardText>
-                </CardBody>
-            </Card>
-        );
-    }
-
     render() {
         const menu = this.props.dishes.map(dish => {
             return (
@@ -56,15 +39,10 @@ class Menu extends Component {
                 <div className="row">
                     {menu}
                 </div>
-                <div className="row">
-                    <div className="col-12 col-md-5 m-1">
-                        <DishDetail dish={this.state.selectedDish}></DishDetail>
-                    </div>
-                </div>
+                <DishDetail dish={this.state.selectedDish}></DishDetail>                
             </div>
         );
     }
-
 }
 
 export default Menu;
