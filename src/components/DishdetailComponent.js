@@ -14,10 +14,10 @@ class DishDetail extends Component {
 
         let commentsToReturn = comments.map(comment => {
             return (
-                <div>
+                <div key={comment.id}>
                     <h4>Comments</h4>
                     <ul className="list-unstyled">
-                        <li key={comment.id}>
+                        <li>
                             <p>{comment.comment}</p>
                             <p>-- {comment.author}, {comment.date}</p>
                         </li>
@@ -28,7 +28,7 @@ class DishDetail extends Component {
         return commentsToReturn;
     }
 
-    renderDish(dish) {        
+    renderDish(dish) {
         return (
             <Card>
                 <CardImg top src={dish.image} alt={dish.name}>
@@ -41,7 +41,7 @@ class DishDetail extends Component {
         );
     }
 
-    
+
     render() {
         let dish = this.props.dish;
         if (dish === null) {
